@@ -25,8 +25,8 @@ const Ball = (props) => {
           flatShading
         />
 
-        <Decal position={[0,0,1]} map={logo} />
-
+        <Decal rotation={[2 * Math.PI, 0, 6.25]} flatShading position={[0,0,1]} map={logo} />
+        
       </mesh>
 
     </Float>
@@ -43,7 +43,9 @@ const BallCanvas = ({ icon }) => {
       
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
+
         <Ball imgUrl={icon} />
+
       </Suspense>
 
       <Preload all/>
